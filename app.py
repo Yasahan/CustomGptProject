@@ -1,6 +1,6 @@
 from openai import OpenAI
 
-client = OpenAI(api_key="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")
+client = OpenAI(api_key="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")
 import gradio as gr
 
 
