@@ -1,0 +1,4 @@
+curl --location --request POST 'https://api.openai.com/v1/files' \
+--header 'Authorization: Bearer {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}' \
+--form 'file=@"{C:\Users\yasah\OneDrive\Dokumente\CustomGpt Project\CustomGptProject\trainingData.jsonl}"' \
+--form 'purpose="fine-tune"'
