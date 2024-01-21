@@ -1,7 +1,8 @@
-import openai
+from openai import OpenAI
+
+client = OpenAI(api_key="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")
 import gradio as gr
 
-openai.api_key = "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"
 
 messages = [
     {"role": "system", "content": "You are a helpful and kind AI Assistant."},
@@ -10,9 +11,7 @@ messages = [
 def chatbot(input):
     if input:
         messages.append({"role": "user", "content": input})
-        chat = openai.ChatCompletion.create(
-            model="gpt-3.5-turbo", messages=messages
-        )
+        chat = client.chat.completions.create(model="gpt-3.5-turbo", messages=messages)
         reply = chat.choices[0].message.content
         messages.append({"role": "assistant", "content": reply})
         return reply
